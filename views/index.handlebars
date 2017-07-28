@@ -1,0 +1,78 @@
+
+
+<section class="hero is-primary">
+
+    <div class="">
+        <div class="column is-6 is-offset-1">
+            <form class="create-update-form is-3 is-offset-1" action="/" method="POST">
+
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-small" type="text" placeholder="Add a Burger" id="ca" name="burger_name">
+                        <span class="icon is-small is-right">
+                        <i class="fa fa-check"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="hero-body level">
+        <div class="column is-6 level-left">
+            <h2 class="title has-text-centered">Burgers to be devoured!</h2>
+        </div>
+        <div class="column is-6 level-right">
+            <h2 class="title has-text-centered">Burgers that have been devoured!</h2>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="columns">
+            <div class="column is-4 is-offset-1">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <div class="box is-white notification">
+                            <h4 class="content">{{burger_name}}</h4>
+
+                                <form action="/{{id}}?_method=PUT" method="POST">
+                                    <input type="hidden" name="devoured" value="true">
+                                    <button class="button is-primary" type="submit">Devour!</button>
+                                </form>
+
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+            <div class="column column is-4 is-offset-2">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <div class="box notification">
+                            <div class="is-pulled-right">
+                                <form action="/{{this.id}}?_method=DELETE" method="POST">
+                                    <span class="tag is-danger">
+                                        delete
+                                        <button class="delete is-small"></button>
+                                    </span>
+                                </form>   
+                            </div>
+
+                            <h4 class="content">{{burger_name}}</h4>
+                            <form action="/{{id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="devoured" value="false">
+                                <button class="button is-warning" type="submit">Undevour</button>
+                            </form>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</section>
