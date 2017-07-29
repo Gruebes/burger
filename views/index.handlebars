@@ -18,10 +18,10 @@
 
     <div class="hero-body level">
         <div class="column is-6 level-left">
-            <h2 class="title has-text-centered">Burgers to be devoured!</h2>
+            <h2 class="title has-text-centered">Burgers to  devour!</h2>
         </div>
         <div class="column is-6 level-right">
-            <h2 class="title has-text-centered">Burgers that have been devoured!</h2>
+            <h2 class="title has-text-centered">Burgers you've devoured!</h2>
         </div>
     </div>
 
@@ -34,8 +34,8 @@
             <div class="column is-4 is-offset-1">
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <div class="box is-white notification">
-                            <h4 class="content">{{burger_name}}</h4>
+                        <div class="box is-light notification">
+                            <h4 class="content"><span class="has-text-info">let</span> <span class="has-text-primary"> burger</span> = <span class="has-text-danger">{{burger_name}}</span>;</h4>
 
                                 <form action="/{{id}}?_method=PUT" method="POST">
                                     <input type="hidden" name="devoured" value="true">
@@ -46,10 +46,10 @@
                     {{/unless}}
                 {{/each}}
             </div>
-            <div class="column column is-4 is-offset-2">
+            <div class="column is-4 is-offset-2">
                 {{#each burgers}}
                     {{#if devoured}}
-                        <div class="box notification">
+                        <div class="box is-grey-dark notification">
                             <div class="is-pulled-right">
                                 <form action="/{{id}}?_method=DELETE" method="POST">
                                     <span class="tag is-danger">
@@ -59,7 +59,7 @@
                                 </form>   
                             </div>
 
-                            <h4 class="content">{{burger_name}}</h4>
+                            <h4 class="content"><span class="has-text-info">let</span> <span class="has-text-primary"> burger</span> = <span class="has-text-danger">{{burger_name}}</span>;</h4>
                             <form action="/{{id}}?_method=PUT" method="POST">
                                 <input type="hidden" name="devoured" value="false">
                                 <button class="button is-warning" type="submit">Reorder</button>
