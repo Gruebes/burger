@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 var app = express();
 
 // app.use(express.static("public"));
-app.use(express.static('/node_modules/bulma/'));
+app.use(express.static("public/assets"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

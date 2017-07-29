@@ -1,14 +1,12 @@
-
-
 <section class="hero is-primary">
 
     <div class="">
-        <div class="column is-half is-offset-one-quarter">
+        <div class="column is-half git is-offset-one-quarter">
             <form class="create-update-form is-half is-offset-one-quarter" action="/" method="POST">
 
                 <div class="field">
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input is-small" type="text" placeholder="Add a Burger" id="ca" name="burger_name">
+                        <input class="input is-small" type="text" placeholder="Order a Burger" id="ca" name="burger_name">
                         <span class="icon is-small is-right">
                         <i class="fa fa-check"></i>
                         </span>
@@ -17,8 +15,6 @@
             </form>
         </div>
     </div>
-
-
 
     <div class="hero-body level">
         <div class="column is-6 level-left">
@@ -66,7 +62,7 @@
                             <h4 class="content">{{burger_name}}</h4>
                             <form action="/{{id}}?_method=PUT" method="POST">
                                 <input type="hidden" name="devoured" value="false">
-                                <button class="button is-warning" type="submit">Undevour</button>
+                                <button class="button is-warning" type="submit">Reorder</button>
                             </form>
                         </div>
                     {{/if}}
