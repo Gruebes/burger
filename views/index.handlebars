@@ -3,8 +3,8 @@
 <section class="hero is-primary">
 
     <div class="">
-        <div class="column is-6 is-offset-1">
-            <form class="create-update-form is-3 is-offset-1" action="/" method="POST">
+        <div class="column is-half is-offset-one-quarter">
+            <form class="create-update-form is-half is-offset-one-quarter" action="/" method="POST">
 
                 <div class="field">
                     <div class="control has-icons-left has-icons-right">
@@ -55,7 +55,7 @@
                     {{#if devoured}}
                         <div class="box notification">
                             <div class="is-pulled-right">
-                                <form action="/{{this.id}}?_method=DELETE" method="POST">
+                                <form action="/{{id}}?_method=DELETE" method="POST">
                                     <span class="tag is-danger">
                                         delete
                                         <button class="delete is-small"></button>
